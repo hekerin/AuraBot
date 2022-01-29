@@ -9,9 +9,9 @@
 
 [![Grup WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/LIX42RUhLi15MBXhfvrF6K)
 
-# Haruno Bot
-Haruno bot adalah bot whatsapp hasil pe-nggarapan ulang dari ariffb25/stikerinbot yang sudah di edit agar bisa di jalankan di termux.
-Haruno bot juga dapat di jalankan di RPP/VPS/Windows, Heroku, Replit.
+# AuraBot
+AuraBot adalah bot whatsapp hasil pe-nggarapan ulang dari ariffb25/stikerinbot yang sudah di edit agar bisa di jalankan di termux.
+AuraBot bot juga dapat di jalankan di RPP/VPS/Windows, Heroku, Replit.
 
 # Termux
 NOTE: untuk pengguna termux yang ingin menggunakan fitur nhentai(dari module nhentai-node-api) harap aktifkan dns (dns.google) agar bisa mengakses fitur (kena internet positif)
