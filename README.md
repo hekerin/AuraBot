@@ -10,8 +10,8 @@
 [![Grup WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/LIX42RUhLi15MBXhfvrF6K)
 
 # AuraBot
-AuraBot adalah bot whatsapp hasil pe-nggarapan ulang dari ariffb25/stikerinbot yang sudah di edit agar bisa di jalankan di termux.
-AuraBot bot juga dapat di jalankan di RPP/VPS/Windows, Heroku, Replit.
+AuraBot adalah bot whatsapp hasil recode dari FadliDarmawan/haruno.
+AuraBot bot dapat di jalankan di Termux, RPP/VPS/Windows, Heroku, Replit.
 
 # Termux
 NOTE: untuk pengguna termux yang ingin menggunakan fitur nhentai(dari module nhentai-node-api) harap aktifkan dns (dns.google) agar bisa mengakses fitur (kena internet positif)
@@ -20,8 +20,8 @@ apt install ffmpeg
 apt install imagemagick
 apt install nodejs
 apt install git
-git clone https://github.com/FadliDarmawan/haruno
-cd haruno
+git clone https://github.com/RFIunknown/AuraBot
+cd AuraBot
 npm i
 node . (option)
 ````
@@ -32,13 +32,13 @@ node . (option)
 * Unduh & Instal FFmpeg [`Klik Disini`](https://ffmpeg.org/download.html) (**Jangan Lupa Tambahkan FFmpeg ke variabel lingkungan PATH**)
 * Unduh & Instal ImageMagick [`Klik Disini`](https://imagemagick.org/script/download.php)
 ```
-git clone https://github.com/FadliDarmawan/haruno
-cd haruno
+git clone https://github.com/RFIunknown/AuraBot
+cd AuraBot
 npm i
 node . (option)
 ```
 # Replit
-[![Run on Repl.it](https://repl.it/badge/github/FadliDarmawan/natsukawa)](https://repl.it/github/FadliDarmawan/haruno)
+[![Run on Repl.it](https://repl.it/RFIunknown/AuraBot)
 * Klik button
 * Buka console
 ```
@@ -46,7 +46,7 @@ npm i
 node . (option)
 ```
 # Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/FadliDarmawan/haruno)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=github.com/RFIunknown/AuraBot)
 
 *install buildpack
 * heroku/nodejs
@@ -140,7 +140,8 @@ conn.logger.level = 'debug'
 
 ---------
 
- [![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo) | [![Ariffb](https://github.com/ariffb25.png?size=100)](https://github.com/ariffb25) | [![Fadli](https://github.com/FadliDarmawan.png?size=100)](https://github.com/FadliDarmawan)
+ [![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo) | [![Ariffb](https://github.com/ariffb25.png?size=100)](https://github.com/ariffb25) | [![Fadli](https://github.com/FadliDarmawan.png?size=100)](https://github.com/FadliDarmawan) | [![Rifai](https://github.com/RFIunkown.png?size=100)](https://github.com/RFIunkown) 
 ----|----|----
-[Nurutomo](https://github.com/Nurutomo) | [Ariffb](https://github.com/ariffb25) | [Fadli](https://github.com/FadliDarmawan)
- Penulis / Pencipta | Penulis ulang | Pengembang ulang
+[Nurutomo](https://github.com/Nurutomo) | [Ariffb](https://github.com/ariffb25) | [Fadli](https://github.com/FadliDarmawan) | [Rifai](https://github.com/RFIunkown)
+ Penulis / Pencipta | Penulis ulang | Pengembang ulang | Recode dan Pengembang
+
