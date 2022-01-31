@@ -1,5 +1,5 @@
 {
-  "name": "harunobot",
+  "name": "AuraBot",
   "version": "2.4.0",
   "description": "WhatsApp Bot Ringan",
   "main": "index.js",
@@ -9,17 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FadliDarmawan/haruno.git"
+    "url": "git+https://github.com/RFIunknown/AuraBot.git"
   },
   "keywords": [
     "whatsapp-bot"
   ],
-  "author": "Fadli",
+  "author": "Rifai",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FadliDarmawan/haruno/issues"
+    "url": "https://github.com/RFIunknown/AuraBot/issues"
   },
-  "homepage": "https://github.com/FadliDarmawan/haruno",
+  "homepage": "https://github.com/RFIunknown/AuraBot",
   "dependencies": {
     "@adiwajshing/baileys": "^3.5.3",
     "awesome-phonenumber": "^2.54.0",
