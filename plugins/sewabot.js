@@ -6,7 +6,7 @@ let handler = async(m, { conn, usedPrefix, args, command }) => {
         conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
             "listMessage": {
               "title": `${ucapan()}, ${name}`.trim(),
-              "description": "Berikut ini adalah daftar harga Haruno Bot.",
+              "description": "Berikut ini adalah daftar harga AuraBot.",
               "footerText": "Silahkan tekan tombol \"Click Here\" untuk melihat daftar harga Haruno Bot.\n\nJika ada pertanyaan atau semacamnya silahkan hubungi owner.",
               "buttonText": "Click Here",
               "listType": "SINGLE_SELECT",
