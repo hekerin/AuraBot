@@ -24,7 +24,7 @@ let handler = async(m, { conn, usedPrefix, text, command }) => {
               itemCoun: 404,
               surface: 404,
               message: `© ${conn.user.name}`,
-              orderTitle: 'Haruno',
+              orderTitle: 'AuraBot',
               thumbnail: img,
               sellerJid: '0@s.whatsapp.net'
           }
