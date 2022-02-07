@@ -2,6 +2,7 @@ let limit = 50
 let fetch = require('node-fetch')
 const { servers, ytv } = require('../lib/y2mate')
 let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
+  process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
   if (!args || !args[0]) throw `Harap masukkan URL Youtube yang ingin di download!\n\nContoh: ${usedPrefix + command} https://youtu.be/zyJJlPSeEpo`
   let chat = global.db.data.chats[m.chat]
   let server = (args[1] || servers[0]).toLowerCase()
@@ -29,4 +30,3 @@ handler.command = /^yt(v|mp4)|mp4?$/i
 handler.limit = true
 
 module.exports = handler
-
