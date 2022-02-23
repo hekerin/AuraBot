@@ -145,7 +145,7 @@ module.exports = {
           private: false,
           restrict: false,
           self: false,
-          backup: false,
+          backup: true,
           backupDB: 0,
           statusUpdate: false,
           status: 0,
@@ -416,7 +416,7 @@ module.exports = {
                 externalAdReply: {
                   mediaUrl: 'https://youtu.be/-tKVN2mAKRI',
                   title: action === 'add' ? wel : lea,
-                  body: 'AuraBot',
+                  body: 'Haruno Bot',
                   thumbnail: pp
                 }
               }}) 
