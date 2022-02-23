@@ -298,21 +298,21 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 13 」"
             }, {
               "rows":[{
-                "title": `Tools[?]�`,
+                "title": `Tools[?]`,
                 "description": "Menu untuk Tools",
                 "rowId": `${_p}? tools`
               }],
               "title": "─────「 14 」"
             }, {
               "rows": [{
-                "title": `Fu[🕺💃]n`,
+                "title": `Fu[🕺💃]`,
                 "description": "Menu Fun",
                 "rowId": `${_p}? fun`
               }],
               "title": "─────「 15 」"
             }, {
               "rows": [{
-                "title": `Databas[🗃️]e`,
+                "title": `Databas[🗃️]`,
                 "description": "Menu untuk Database",
                 "rowId": `${_p}? database`
               }],
@@ -320,48 +320,48 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
             }, {
               "rows": [{
                 "title": `Vote & Absen`,
-                "description": "Menu untuk Vote & Abse[🗣️📝]n",
+                "description": "Menu untuk Vote & Abse[🗣️📝]",
                 "rowId": `${_p}? vote`
               }],
               "title": "─────「 17 」"
             }, {
               "rows": [{
-                "title": `Islamic`,
-                "description": "Menu Islami[☪️]c",
+                "title": `Islami[☪️]`,
+                "description": "Menu Islami",
                 "rowId": `${_p}? islamic`
               }],
               "title": "─────「 18 」"
             }, {
               "rows": [{
-                "title": `Pengubah Suar[🎙️]a`,
+                "title": `Pengubah Suar[🎙️]`,
                 "description": "Menu Pengubah Suara",
                 "rowId": `${_p}? audio`
               }],
               "title": "─────「 19 」"
             }, {
               "rows": [{
-                "title":  `Jadi Bo[🤖]t`,
+                "title":  `Jadi Bo[🤖]`,
                 "description": "Numpang",
                 "rowId": `${_p}? jadibot`
               }],
               "title": "─────「 20 」"
             }, {
               "rows": [{
-                "title": `Inf[💁‍♂️]o`,
+                "title": `Inf[💁‍♂️]`,
                 "description": "Menu untuk Info",
                 "rowId": `${_p}? info`
               }],
               "title": "─────「 21 」"
             }, {
               "rows": [{
-                "title": `Tanpa Kategor[?]i`,
+                "title": `Tanpa Kategor[?]`,
                 "description": "Menu Tanpa Kategori",
                 "rowId": `${_p}? tanpakategori`
               }],
               "title": "─────「 22 」"
             }, {
               "rows": [{
-                "title":  `Owner Men[👨‍💻📜]u`,
+                "title":  `Owner Men[👨‍💻📜]`,
                 "description": "Menu Khusus Owner",
                 "rowId": `${_p}? owner`
               }],
