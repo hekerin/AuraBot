@@ -333,35 +333,35 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 18 」"
             }, {
               "rows": [{
-                "title": `Pengubah Suar[🎙️]`,
+                "title": `Pengubah Suara[🎙️]`,
                 "description": "Menu Pengubah Suara",
                 "rowId": `${_p}? audio`
               }],
               "title": "─────「 19 」"
             }, {
               "rows": [{
-                "title":  `Jadi Bo[🤖]`,
+                "title":  `Jadi Bot[🤖]`,
                 "description": "Numpang",
                 "rowId": `${_p}? jadibot`
               }],
               "title": "─────「 20 」"
             }, {
               "rows": [{
-                "title": `Inf[💁‍♂️]`,
+                "title": `Info[💁‍♂️]`,
                 "description": "Menu untuk Info",
                 "rowId": `${_p}? info`
               }],
               "title": "─────「 21 」"
             }, {
               "rows": [{
-                "title": `Tanpa Kategor[?]`,
+                "title": `Tanpa Kategori[?]`,
                 "description": "Menu Tanpa Kategori",
                 "rowId": `${_p}? tanpakategori`
               }],
               "title": "─────「 22 」"
             }, {
               "rows": [{
-                "title":  `Owner Men[👨‍💻📜]`,
+                "title":  `Owner Menu[👨‍💻📜]`,
                 "description": "Menu Khusus Owner",
                 "rowId": `${_p}? owner`
               }],
