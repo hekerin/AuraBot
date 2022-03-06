@@ -23,7 +23,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         externalAdReply: {
           mediaUrl: 'https://youtu.be/-tKVN2mAKRI',
           title: 'Kurang dikit lagi!',
-          body: 'Haruno Bot',
+          body: 'AuraBot',
           thumbnail: pp
         }
       }})
@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         externalAdReply: {
           mediaUrl: 'https://youtu.be/-tKVN2mAKRI',
           title: 'Levelup!',
-          body: 'Haruno Bot',
+          body: 'AuraBot',
           thumbnail: pp
         }
       }})
