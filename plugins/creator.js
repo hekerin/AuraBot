@@ -1,17 +1,17 @@
 const { MessageType } = require('@adiwajshing/baileys')
 const PhoneNumber = require('awesome-phonenumber')
 async function handler(m) {
-  let name = 'Fadli'
+  let name = 'Rifai'
   number = owner[0].replace(/[^0-9]/g, '')
   let njid = number + '@s.whatsapp.net'
   let onW = await this.isOnWhatsApp(njid) || { isBusiness: false }
 
-  let name2 = 'Zaki'
+  let name2 = 'Aura'
   number2 = owner[1].replace(/[^0-9]/g, '')
   let njid2 = number2 + '@s.whatsapp.net'
   let onW2 = await this.isOnWhatsApp(njid2) || { isBusiness: false }
 
-  let name3 = 'Rifai'
+  let name3 = 'Fadli'
   number3 = owner[2].replace(/[^0-9]/g, '')
   let njid3 = number3 + '@s.whatsapp.net'
   let onW3 = await this.isOnWhatsApp(njid3) || { isBusiness: false }
@@ -23,9 +23,7 @@ let name4 = 'Riyu'
 
 
 
-  m.reply(`Nomer owner itu *BUKAN BOT*, tapi nomor _*PEMILIK BOT*_\n\nSilahan chat jika ada keperluan atau masalah.\nChat "P" atau minta save kemungkinan tidak akan di balas, dan -9999 social credit.
-  
-  *OWNER AURABOT BERNAMA RIFAI*`)
+  m.reply(`Nomer owner itu *BUKAN BOT*, tapi nomor _*PEMILIK BOT*_\n\nSilahan chat jika ada keperluan atau masalah.\nChat "P" atau minta save kemungkinan tidak akan di balas, dan -9999 social credit`)
   this.sendMessage(m.chat, {
     contacts: [{
       displayname: name, vcard: `
