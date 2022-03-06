@@ -60,7 +60,7 @@ global.panduan = [
     {
         "index": "3",
         "search": "add",
-        "deskripsi": "Cara menambahkan bot ke dalam group. silahkan baca pada menu sewa dengan mengetikkan *.sewa*. AuraBot memberlakukan trial gratis 3 hari. Setelah 3 hari maka bot akan keluar dari group. ada opsi 1 minggu, 1 bulan dan 2 bulan berlangganan.",
+        "deskripsi": "Cara menambahkan bot ke dalam group. silahkan baca pada menu sewa dengan mengetikkan *.sewa*. AuraBot memberlakukan trial gratis 1 hari. Setelah 1 hari maka bot akan keluar dari group. ada opsi 1 minggu, 1 bulan dan 2 bulan berlangganan.",
         "judul": "Cara menambahkan bot ke group",
     },
     {
