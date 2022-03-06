@@ -416,7 +416,7 @@ module.exports = {
                 externalAdReply: {
                   mediaUrl: 'https://youtu.be/-tKVN2mAKRI',
                   title: action === 'add' ? wel : lea,
-                  body: 'Haruno Bot',
+                  body: 'AuraBot',
                   thumbnail: pp
                 }
               }}) 
