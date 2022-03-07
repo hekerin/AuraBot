@@ -38,7 +38,7 @@ npm i
 node . (option)
 ```
 # Replit
-[![Run on Repl.it](https://repl.it/RFIunknown/AuraBot)
+[![Run on Repl.it](https://repl.it/badge/github/RFIunknown/AuraBot)](https://repl.it/github/RFIunknown/AuraBot)
 * Klik button
 * Buka console
 ```
