@@ -17,13 +17,10 @@ const defaultMenu = {
 Panduan Singkat
 <> adalah parameter query
 Contoh: .join <link gc> maka .join https://chat.whatsapp.com/
-
 [] adalah tag seseorang atau parameter nomor
 Contoh: .kick [@62XXXX] maka .kick @62XXXX
-
 (limit) atau (premium) adalah keterangan apakah fitur tersebut memerlukan limit/hanya untuk user premium.
 Penggunaan command tidak usah menggunakan ()
-
 Penggunaan tidak usah menggunakan <> atau []
 `,
 }
@@ -227,28 +224,28 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 3 」"
             }, {
               "rows": [{
-                "title": `Sticker[🖼️]`,
+                "title": `Sticker[🎇️]`,
                 "description": "Menu untuk Sticker",
                 "rowId": `${_p}? stiker`
               }],
               "title": "─────「 4 」"
             }, {
               "rows": [{
-                "title": `Kerang Ajaib[🗣️]`,
+                "title": `Kerang Ajaib[🐚️]`,
                 "description": "Puja kerang ajaib...",
                 "rowId": `${_p}? kerangajaib`
               }],
               "title": "─────「 5 」"
             }, {
               "rows": [{
-                "title": `Quotes[♥️💔]`,
+                "title": `Quotes��]`,
                 "description": "Menu untuk Quotes",
                 "rowId": `${_p}? quotes`
               }],
               "title": "─────「 6 」"
             }, {
               "rows": [{
-                "title": `Admin[👤🎊]`,
+                "title": `Admin[�🎊]`,
                 "description": "Menu untuk Admin",
                 "rowId": `${_p}? admin`
               }],
@@ -284,14 +281,14 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 11 」"
             }, {
               "rows": [{
-                "title": `Nulis & Logo[✍️📖]`,
+                "title": `Nulis & Logo✒️📖]`,
                 "description": "Menu untuk Nulis & Logo",
                 "rowId": `${_p}? nulis`
               }],
               "title": "─────「 12 」"
             }, {
               "rows": [{
-                "title": `Downloader[📱]`,
+                "title": `Downloader📱�📱]`,
                 "description": "Menu Downloader",
                 "rowId": `${_p}? downloader`
               }],
@@ -299,13 +296,13 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
             }, {
               "rows":[{
                 "title": `Tools[?]`,
-                "description": "Menu untuk Tools",
+                "description": "Menu untuk To[⚙️]ols",
                 "rowId": `${_p}? tools`
               }],
               "title": "─────「 14 」"
             }, {
               "rows": [{
-                "title": `Fu[🕺💃]`,
+                "title": `Fn menuu🎲🎮�💃]`,
                 "description": "Menu Fun",
                 "rowId": `${_p}? fun`
               }],
@@ -319,14 +316,14 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 16 」"
             }, {
               "rows": [{
-                "title": `Vote & Absen`,
-                "description": "Menu untuk Vote & Abse[🗣️📝]",
+                "title": `Vote & Abse[📝️]�n`,
+                "description": "Menu untuk Vote & Absn📝]",
                 "rowId": `${_p}? vote`
               }],
               "title": "─────「 17 」"
             }, {
               "rows": [{
-                "title": `Islami[☪️]`,
+                "title": `Is🕋mi[☪️]`,
                 "description": "Menu Islami",
                 "rowId": `${_p}? islamic`
               }],
@@ -347,21 +344,21 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 20 」"
             }, {
               "rows": [{
-                "title": `Info[💁‍♂️]`,
+                "title": `ℹ️[💁‍♂️]`,
                 "description": "Menu untuk Info",
                 "rowId": `${_p}? info`
               }],
               "title": "─────「 21 」"
             }, {
               "rows": [{
-                "title": `Tanpa Kategori[?]`,
+                "title": `Tanpa Ktegori[?]`,
                 "description": "Menu Tanpa Kategori",
                 "rowId": `${_p}? tanpakategori`
               }],
               "title": "─────「 22 」"
             }, {
               "rows": [{
-                "title":  `Owner Menu[👨‍💻📜]`,
+                "title":  `Owner Meu[👨‍💻📜]`,
                 "description": "Menu Khusus Owner",
                 "rowId": `${_p}? owner`
               }],
