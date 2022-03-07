@@ -1,14 +1,14 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) throw `Harap masukkan query!\n\nContoh: ${usedPrefix + command} klee genshin impact`
+  if (!text) throw `Harap masukkan query!\n\nContoh: ${usedPrefix + command} Yukinoshita Yukino`
   let res = await fetch(global.API('zeks', '/api/pinimg', {
     q: text
   }, 'apikey'))
-  if (!res.ok) throw eror
+  if (!res.ok) throw res
   let json = await res.json()
   if (!json.status) throw json
   let pint = json.data[Math.floor(Math.random() * json.data.length)];
-  conn.sendFile(m.chat, pint, '', watermark, m, 0, { thumbnail: await (await fetch(pint)).buffer() })
+  await conn.sendButtonImg(m.chat, await (await fetch(pint)).buffer(), text, watermark, 'Cari lagi', `.pinterest ${text}`, m)
 }
 handler.help = ['pinterest <pencarian>']
 handler.tags = ['internet']
