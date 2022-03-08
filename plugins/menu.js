@@ -183,7 +183,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           "title": `${ucapan()}, ${name}`.trim(),
           "description": "*Website Resmi Owner AuraBot* https://rfiunknown.github.io/dist/",
           "footerText": "Jika Ada Bug/Eror Silahkan Laporkan Ke Owner",
-          "buttonText": "MENU",
+          "buttonText": "MENU DEK!!!",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
@@ -288,14 +288,14 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 12 」"
             }, {
               "rows": [{
-                "title": `Downloader]`,
+                "title": `Downloader`,
                 "description": "Menu Downloader",
                 "rowId": `${_p}? downloader`
               }],
               "title": "─────「 13 」"
             }, {
               "rows":[{
-                "title": `Tools[?]`,
+                "title": `Tools`,
                 "description": "Menu untuk Tools",
                 "rowId": `${_p}? tools`
               }],
