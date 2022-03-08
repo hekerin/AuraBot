@@ -210,56 +210,56 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 1 」"
             }, {
               "rows": [{
-                "title": `Game[🎮]`,
+                "title": `Game`,
                 "description": "Menu untuk Game",
                 "rowId": `${_p}? game`
               }],
               "title": "─────「 2 」"
             }, {
               "rows": [{
-                "title": `XP[🎲]`,
+                "title": `XP`,
                 "description": "Menu untuk XP",
                 "rowId": `${_p}? xp`
               }],
               "title": "─────「 3 」"
             }, {
               "rows": [{
-                "title": `Sticker[🎇️]`,
+                "title": `Sticker`,
                 "description": "Menu untuk Sticker",
                 "rowId": `${_p}? stiker`
               }],
               "title": "─────「 4 」"
             }, {
               "rows": [{
-                "title": `Kerang Ajaib[🐚️]`,
+                "title": `Kerang Ajaib`,
                 "description": "Puja kerang ajaib...",
                 "rowId": `${_p}? kerangajaib`
               }],
               "title": "─────「 5 」"
             }, {
               "rows": [{
-                "title": `Quotes��]`,
+                "title": `Quotes`,
                 "description": "Menu untuk Quotes",
                 "rowId": `${_p}? quotes`
               }],
               "title": "─────「 6 」"
             }, {
               "rows": [{
-                "title": `Admin[�🎊]`,
+                "title": `Admin`,
                 "description": "Menu untuk Admin",
                 "rowId": `${_p}? admin`
               }],
               "title": "─────「 7 」"
             }, {
               "rows": [{
-                "title": `Grup[📋🎊]`,
+                "title": `Grup`,
                 "description": "Menu untuk Group",
                 "rowId": `${_p}? group`
               }],
               "title": "─────「 8 」"
             }, {
               "rows": [{
-                "title": `Premium[👑]`,
+                "title": `Premium`,
                 "description": "Menu untuk Premium Users",
                 "rowId": `${_p}? premium`
               }],
@@ -267,14 +267,14 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
             }, {
               "rows": [{
                 "title":
-`Internet[🌐]`,
+`Internet`,
                 "description": "Menu untuk menjelajahi Internet...",
                 "rowId": `${_p}? internet`
               }],
               "title": "─────「 10 」"
             }, {
               "rows": [{
-                "title": `Anonymous Chat[👥]`,
+                "title": `Anonymous Chat`,
                 "description": "Menu untuk Anonymous Chat",
                 "rowId": `${_p}? anonymous`
               }],
@@ -288,7 +288,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 12 」"
             }, {
               "rows": [{
-                "title": `Downloader📱�📱]`,
+                "title": `Downloader]`,
                 "description": "Menu Downloader",
                 "rowId": `${_p}? downloader`
               }],
@@ -302,63 +302,63 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 14 」"
             }, {
               "rows": [{
-                "title": `Fn menuu🎲🎮�💃]`,
+                "title": `Fun menu`,
                 "description": "Menu Fun",
                 "rowId": `${_p}? fun`
               }],
               "title": "─────「 15 」"
             }, {
               "rows": [{
-                "title": `Databas[🗃️]`,
+                "title": `Database`,
                 "description": "Menu untuk Database",
                 "rowId": `${_p}? database`
               }],
               "title": "─────「 16 」"
             }, {
               "rows": [{
-                "title": `Vote & Abse[📝️]�n`,
-                "description": "Menu untuk Vote & Absn📝]",
+                "title": `Vote & Absen`,
+                "description": "Menu untuk Vote & Absen",
                 "rowId": `${_p}? vote`
               }],
               "title": "─────「 17 」"
             }, {
               "rows": [{
-                "title": `Is🕋mi[☪️]`,
+                "title": `Islami`,
                 "description": "Menu Islami",
                 "rowId": `${_p}? islamic`
               }],
               "title": "─────「 18 」"
             }, {
               "rows": [{
-                "title": `Pengubah Suara[🎙️]`,
+                "title": `Pengubah Suara`,
                 "description": "Menu Pengubah Suara",
                 "rowId": `${_p}? audio`
               }],
               "title": "─────「 19 」"
             }, {
               "rows": [{
-                "title":  `Jadi Bot[🤖]`,
+                "title":  `Jadi Bot`,
                 "description": "Numpang",
                 "rowId": `${_p}? jadibot`
               }],
               "title": "─────「 20 」"
             }, {
               "rows": [{
-                "title": `ℹ️[💁‍♂️]`,
+                "title": `Info`,
                 "description": "Menu untuk Info",
                 "rowId": `${_p}? info`
               }],
               "title": "─────「 21 」"
             }, {
               "rows": [{
-                "title": `Tanpa Ktegori[?]`,
+                "title": `Tanpa Ktegori`,
                 "description": "Menu Tanpa Kategori",
                 "rowId": `${_p}? tanpakategori`
               }],
               "title": "─────「 22 」"
             }, {
               "rows": [{
-                "title":  `Owner Meu[👨‍💻📜]`,
+                "title":  `Owner Menu`,
                 "description": "Menu Khusus Owner",
                 "rowId": `${_p}? owner`
               }],
