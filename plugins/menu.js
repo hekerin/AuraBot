@@ -203,7 +203,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "Informasi Bot"
             }, {
               "rows": [{
-                "title": `Semua Perintah[📋]`,
+                "title": `Semua Perintah`,
                 "description": "Menu Semua Perintah",
                 "rowId": `${_p}? all`
                 }],
@@ -281,7 +281,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 11 」"
             }, {
               "rows": [{
-                "title": `Nulis & Logo✒️📖]`,
+                "title": `Nulis & Logo`,
                 "description": "Menu untuk Nulis & Logo",
                 "rowId": `${_p}? nulis`
               }],
@@ -296,7 +296,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
             }, {
               "rows":[{
                 "title": `Tools[?]`,
-                "description": "Menu untuk To[⚙️]ols",
+                "description": "Menu untuk Tools",
                 "rowId": `${_p}? tools`
               }],
               "title": "─────「 14 」"
