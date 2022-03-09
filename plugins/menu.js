@@ -351,7 +351,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 21 」"
             }, {
               "rows": [{
-                "title": `Tanpa Ktegori`,
+                "title": `Tanpa Kategori`,
                 "description": "Menu Tanpa Kategori",
                 "rowId": `${_p}? tanpakategori`
               }],
