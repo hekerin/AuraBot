@@ -1,6 +1,6 @@
 let fetch = require("node-fetch")
 let handler = async (m, { conn }) => {
-  let res = await fetch(global.API('https://onecak.azurewebsites.net', '/?shuffle=5'))
+  let res = await fetch(global.API('https://some-random-api.ml', '/meme'))
   if (!res.ok) throw await res.text()
   let json = await res.json()
   if (!json.image) throw 'Err!'
