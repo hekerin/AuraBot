@@ -5,7 +5,7 @@ let fs = require('fs')
 let package = require('./package.json')
 const CFonts = require('cfonts')
 CFonts.say('AuraBot', {
-  colors: ['#f2aa4c'],
+  colors: ['#4ab818'],
   font: 'block',
   align: 'center',
 })
