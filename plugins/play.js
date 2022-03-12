@@ -2,10 +2,9 @@ const { servers, yta, ytv } = require('../lib/y2mate')
 let yts = require('yt-search')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  let [t, o] = text.split`,`
-  if (!t) throw `Harap masukkan query!\n\nContoh: ${usedPrefix + command} yanagi nagi one's hope`
+  if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} california`
   let chat = global.db.data.chats[m.chat]
-  let results = await yts(t)
+  let results = await yts(text)
   let vid = results.all.find(video => video.seconds < 3600)
   if (!vid) throw 'Konten Tidak ditemukan'
   let isVideo = /2$/.test(command)
@@ -20,28 +19,18 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       usedServer = server
       break
     } catch (e) {
-      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nTrying another server...'}`)
+      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
     }
   }
-  if (yt === false) throw 'No songs found. Try another keyword or as possible including song title and artist name!'
-  if (yt2 === false) throw 'No songs found. Try another keyword or as possible including song title and artist name!'
+  if (yt === false) throw 'semua server gagal'
+  if (yt2 === false) throw 'semua server gagal'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
-  let th = await(await fetch(image)).buffer()
-  let thb = await(await fetch(thumb)).buffer()
-  await conn.reply(m.chat, `- Requested by @${m.sender.split`@`[0]}`, m, { thumbnail: th, contextInfo: { 
-    mentionedJid: [m.sender],
-    externalAdReply: {
-       mediaUrl: 'https://youtu.be/-tKVN2mAKRI',
-       title: 'Now playing',
-       body: title,
-       thumbnail: thb
-     }
-   }})
-  if (o === ' vn') {
-    await conn.sendFile(m.chat, dl_link, `${title}` + '.mp3', null, m, true)
-  } else if (!o || o === ' audio') {
-    await conn.sendFile(m.chat, dl_link, `${title}` + '.mp3', null, m)
-  }
+  await conn.send2ButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
+*Judul:* ${title}
+*Ukuran File Audio:* ${filesizeF}
+*Ukuran File Video:* ${yt2.filesizeF}
+*Server y2mate:* ${usedServer}
+`.trim(), '© stikerin', 'Audio', `.yta ${vid.url}`, 'Video', `.yt ${vid.url}`)
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
