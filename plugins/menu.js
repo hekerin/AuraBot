@@ -309,69 +309,71 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                 "title": `Fun menu`,
                 "description": "Menu Fun",
                 "rowId": `${_p}? fun`
-            }, {
-              "rows": [{
-                "title": `Anime`,
-                "description": "Menu Wibu",
-                "rowId": `${_p}? anime`
               }],
               "title": "─────「 15 」"
+            }, {
+              "rows": [{
+                "title": `Menu Wibu`,
+                "description": "Menu Untuk Wibu",
+                "rowId": `${_p}? anime`
+            }, {
+              "title": "─────「 16 」"
             }, {
               "rows": [{
                 "title": `Database`,
                 "description": "Menu untuk Database",
                 "rowId": `${_p}? database`
               }],
-              "title": "─────「 16 」"
+              "title": "─────「 17 」"
             }, {
               "rows": [{
                 "title": `Vote & Absen`,
                 "description": "Menu untuk Vote & Absen",
                 "rowId": `${_p}? vote`
               }],
-              "title": "─────「 17 」"
+              "title": "─────「 18 」"
             }, {
               "rows": [{
                 "title": `Islami`,
                 "description": "Menu Islami",
                 "rowId": `${_p}? islamic`
               }],
-              "title": "─────「 18 」"
+              "title": "─────「 19 」"
             }, {
               "rows": [{
                 "title": `Pengubah Suara`,
                 "description": "Menu Pengubah Suara",
                 "rowId": `${_p}? audio`
               }],
-              "title": "─────「 19 」"
+              "title": "─────「 20 」"
             }, {
               "rows": [{
                 "title":  `Jadi Bot`,
                 "description": "Numpang",
                 "rowId": `${_p}? jadibot`
               }],
-              "title": "─────「 20 」"
+              "title": "─────「 21 」"
             }, {
               "rows": [{
                 "title": `Info`,
                 "description": "Menu untuk Info",
                 "rowId": `${_p}? info`
               }],
-              "title": "─────「 21 」"
+              "title": "─────「 22 」"
             }, {
               "rows": [{
                 "title": `Tanpa Kategori`,
                 "description": "Menu Tanpa Kategori",
                 "rowId": `${_p}? tanpakategori`
               }],
-              "title": "─────「 22 」"
+              "title": "─────「 23 」"
             }, {
               "rows": [{
                 "title":  `Owner Menu`,
                 "description": "Menu Khusus Owner",
                 "rowId": `${_p}? owner`
               }],
-              "title": "─────「 23 」"
+              "title": "─────「 24 」"
             }
           ], "contextInfo": {
             "stanzaId": m.key.id,
