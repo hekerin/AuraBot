@@ -11,3 +11,4 @@ handler.tags = ['anime']
 handler.command = /^(loli)$/i
 
 module.exports = handler
+
