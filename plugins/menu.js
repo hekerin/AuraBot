@@ -8,6 +8,8 @@ const defaultMenu = {
   before: `
 ┌─〔 %me 〕
 ├ Hai, *%name!*
+├ Uptime: *%uptime*
+├ Database: *%totalreg*
 └────
 %readmore`.trimStart(),
   header: '┌─〔 %category 〕',
@@ -187,7 +189,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           "title": `${ucapan()}, ${name}`.trim(),
           "description": "*Website Resmi Owner AuraBot* https://rfiunknown.github.io/dist/",
           "footerText": "Jika Ada Bug/Eror Silahkan Laporkan Ke Owner",
-          "buttonText": "MENU DEK!!!",
+          "buttonText": "List Menu",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
