@@ -27,7 +27,7 @@ Penggunaan tidak usah menggunakan <> atau []
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'anime', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Utama',
@@ -41,11 +41,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'premium': 'Premium',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
+    'anime': 'Anime', 
     'nulis': 'MagerNulis & Logo',
     'downloader': 'Downloader',
     'tools': 'Tools',
     'fun': 'Fun',
-    'anime': 'Menu Wibu'
     'database': 'Database',
     'vote': 'Voting',
     'absen': 'Absen',
@@ -85,6 +85,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'anonymous') tags = {
     'anonymous': 'Anonymous Chat'
   }
+  if (teks == 'anime') tags = {
+     'anime': 'Anime'
+  }
   if (teks == 'nulis') tags = {
     'nulis': 'MagerNulis & Logo'
   }
@@ -96,9 +99,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'fun') tags = {
     'fun': 'Fun'
-  }
-  if (teks == 'anime') tags = {
-    'anime': 'Menu wibu'
   }
   if (teks == 'database') tags = {
     'database': 'Database'
@@ -285,38 +285,38 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 11 」"
             }, {
               "rows": [{
+                "title": 'Anime', 
+                "description ": "Menu untuk wibu", 
+                "rowld": `${_p}? anime` 
+             }], 
+              "title": "_______ 「 12 」"
+            }, {
+              "rows": [{
                 "title": `Nulis & Logo`,
                 "description": "Menu untuk Nulis & Logo",
                 "rowId": `${_p}? nulis`
               }],
-              "title": "─────「 12 」"
+              "title": "─────「 13 」"
             }, {
               "rows": [{
                 "title": `Downloader`,
                 "description": "Menu Downloader",
                 "rowId": `${_p}? downloader`
               }],
-              "title": "─────「 13 」"
+              "title": "─────「 14 」"
             }, {
               "rows":[{
                 "title": `Tools`,
                 "description": "Menu untuk Tools",
                 "rowId": `${_p}? tools`
               }],
-              "title": "─────「 14 」"
+              "title": "─────「 15 」"
             }, {
               "rows": [{
                 "title": `Fun menu`,
                 "description": "Menu Fun",
                 "rowId": `${_p}? fun`
               }],
-              "title": "─────「 15 」"
-            }, {
-              "rows": [{
-                "title": `Menu Wibu`,
-                "description": "Menu Untuk Wibu",
-                "rowId": `${_p}? anime`
-            }, {
               "title": "─────「 16 」"
             }, {
               "rows": [{
