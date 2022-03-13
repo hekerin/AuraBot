@@ -1,10 +1,21 @@
-// wahai para para weaboo🗿
 let fetch = require('node-fetch')
-let handler = async (m, { conn }) => {
-  conn.sendFile(m.chat, global.API('adiisus', '/api/randomimage/milf'), 'milf.jpg', '_*Nih Milf nya*_', m)
+     let handler  = async (m, { conn, args }) => {
+    heum = await fetch(`https://api.lolhuman.xyz/api/random/nsfw/milf?apikey=458482071d3ef6fe3f1e4e76`)
+    json = await heum.buffer()
+   conn.sendFile(m.chat, json, 'nulis', '*Wangy wangy*', m, false, { thumbnail: Buffer.alloc(0) })
 }
 handler.help = ['milf']
-handler.tags = ['anime']
+handler.tags = ['premium']
 handler.command = /^(milf)$/i
-handler.limit = true
+handler.owner = false
+handler.mods = false
+handler.premium = true
+handler.group = false
+handler.private = false
+
+handler.admin = false
+handler.botAdmin = false
+
+handler.fail = null
+
 module.exports = handler
