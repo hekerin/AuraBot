@@ -13,8 +13,6 @@ global.APIs = { // API Prefix
   vhtear: 'https://api.vhtear.com',
   lolhum: 'https://api.lolhuman.xyz',
   bx: 'https://bx-hunter.herokuapp.com',
-  adiisus: 'https://adiixyzapi.herokuapp.com',
-  LeysCoder: 'https://leyscoders-api.herokuapp.com'
 
 }
 global.APIKeys = { // APIKey nya disini
@@ -28,7 +26,6 @@ global.APIKeys = { // APIKey nya disini
   'https://api.vhtear.com': 'sayahafiz',
   'http://zekais-api.herokuapp.com': 'grqgD6pU',
   'https://bx-hunter.herokuapp.com': 'Ikyy69',
-  'https://leyscoders-api.herokuapp.com': 'dappakntlll'
 }
 
 // Sticker WM
