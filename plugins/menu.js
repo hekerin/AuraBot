@@ -314,7 +314,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
             }, {
               "rows": [{
                 "title": `Fun menu`,
-                "description": "Menu Fun",
+                "description": "Menu Hiburan",
                 "rowId": `${_p}? fun`
               }],
               "title": "─────「 16 」"
