@@ -19,7 +19,7 @@ global.APIKeys = { // APIKey nya disini
   // 'https://website': 'apikey'
   'https://api.neoxr.eu.org/': 'yntkts',
   'https://pencarikode.xyz': 'APIKEY',
-  'https://api.xteam.xyz': 'HIRO',
+  'https://api.xteam.xyz': 'e840b6abcac520ca',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.me': 'apivinz',
   'https://api.lolhuman.xyz': '929b48b9aa5a91abed8526cd',
