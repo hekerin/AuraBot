@@ -7,7 +7,7 @@ let handler = async (m, { conn, args }) => {
   conn.sendFile(m.chat, json.url, 'husbu.jpg', json.name, m, false)
 }
 handler.help = ['husbu'].map(v => v + ' ')
-handler.tags = ['internet']
+handler.tags = ['anime']
 
 handler.command = /^(husbu)$/i
 
