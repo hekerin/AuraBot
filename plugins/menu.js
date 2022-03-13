@@ -285,9 +285,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 11 」"
            }, {
               "rows": [{
-                "title": `Menu Wibu`,
+                "title": `Menu Anime`,
                 "description": "Menu Untuk Wibu",
-                "rowId": `${_p}? tanpakategori`
+                "rowId": `${_p}? anime`
               }],
               "title": "_______ 「 12 」"
             }, {
