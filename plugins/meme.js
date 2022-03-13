@@ -4,7 +4,7 @@ let handler = async (m, { conn }) => {
  await conn.sendFile(m.chat, global.API('xteam', '/randomimage/meme', {}, 'APIKEY'), 'meme.png', '*maaf kalau krinj :v*', m, false, {thumbnail: Buffer.alloc(0) })
 }
 handler.help = ['meme']
-handler.tags = ['random']
+handler.tags = ['fun']
 handler.command = /^meme$/i
 handler.owner = false
 handler.mods = false
