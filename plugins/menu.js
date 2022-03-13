@@ -27,7 +27,7 @@ Penggunaan tidak usah menggunakan <> atau []
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'anime', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Utama',
@@ -45,6 +45,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'downloader': 'Downloader',
     'tools': 'Tools',
     'fun': 'Fun',
+    'anime': 'Menu Wibu'
     'database': 'Database',
     'vote': 'Voting',
     'absen': 'Absen',
@@ -95,6 +96,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'fun') tags = {
     'fun': 'Fun'
+  }
+  if (teks == 'anime') tags = {
+    'anime': 'Menu wibu'
   }
   if (teks == 'database') tags = {
     'database': 'Database'
@@ -305,6 +309,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                 "title": `Fun menu`,
                 "description": "Menu Fun",
                 "rowId": `${_p}? fun`
+            }, {
+              "rows": [{
+                "title": `Anime`,
+                "description": "Menu Wibu",
+                "rowId": `${_p}? anime`
               }],
               "title": "─────「 15 」"
             }, {
