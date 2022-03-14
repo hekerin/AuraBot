@@ -17,7 +17,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 }
 }
 handler.help = ['wangy', 'nenen', 'simp', 'sherk']
-handler.tags = ['wibu']
+handler.tags = ['anime']
 
 handler.command = /^(wangy|nenen|simp|sherk)$/i
 
