@@ -1,29 +1,17 @@
-let fs = require('fs')
-let fetch = require('node-fetch')
-let handler = async (m, { conn, usedPrefix }) => {
-  conn.reply(m.chat, `*${pickRandom(loli)}*\n_PEDO :V_`, m)
+let handler = async (m, { conn }) => {
+    let yh = global.loli
+    let url = yh[Math.floor(Math.random() * yh.length)]
+    let buffer = (await conn.getFile(url)).data
+    conn.sendButton(m.chat, 'pedo :v', author, buffer, [[
+        'loli', '/loli'
+    ]], { quoted: m })
 }
-handler.help = ['randomloli']
-handler.tags = ['anime']
 handler.command = /^(randomloli)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-
+handler.tags = ['anime']
+handler.help = ['randomloli']
 module.exports = handler
 
-function pickRandom(list) {
-  return list[Math.floor(list.length * Math.random())]
-}
-
-const loli = [
+global.loli = [
     "https://i.imgur.com/cvqoK7l.jpg",
     "https://i.imgur.com/r1rm2ry.jpg",
     "https://i.imgur.com/8XO7t9a.jpg",
