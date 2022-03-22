@@ -27,7 +27,7 @@ let handler = async (m, { conn }) => {
 ├ ${backup ? '✅' : '❌'} *Auto Backup DB*
 ├ ${groupOnly ? '✅' : '❌'} *Mode Grup*
 ├ ${jadibot ? '✅' : '❌'} *Jadi Bot*
-├ ${nhentai ? '✅' : '❌'} *Nhentai PDF*
+├ ${nhentai ? '✅' : '❌'} *Mode Nsfw*
 └────
     `.trim())
 }
