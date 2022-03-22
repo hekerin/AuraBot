@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn }) => await conn.sendButtonLoc(m.chat, await (await fetch(thumbfoto)).buffer(), `
 ┌〔 Donasi • Emoney 〕
-├ GoPay: -
+├ GoPay: 6281393227036
 ├ OVO: -
 ├ Dana: 6281393227036
 ├ Pulsa (Telkomsel): 6281393227036
