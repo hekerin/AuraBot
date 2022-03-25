@@ -5,7 +5,7 @@ let handler = async(m, { conn, args, usedPrefix }) => {
     if (args[0] == 'random' || args[0] == 'waifu' || args[0] == 'husbu' || args[0] == 'neko') {
   await m.reply('Searching...')
 
-        fetch('https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/anime/' + args[0] + '.txt')
+        fetch('https://raw.githubusercontent.com/RFIunknown/AuraBot-server/main/random/anime/' + args[0] + '.txt')
             .then(res => res.text())
             .then(body => {
                 let randomnime = body.split('\n')
