@@ -143,6 +143,6 @@ conn.logger.level = 'debug'
  [![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo) | [![Ariffb](https://github.com/ariffb25.png?size=100)](https://github.com/ariffb25) | [![Fadli](https://github.com/FadliDarmawan.png?size=100)](https://github.com/FadliDarmawan) | [![Rifai](https://github.com/RFIunknown.png?size=100)](https://github.com/RFIunknown)
 ----|----|----|----
 [Nurutomo](https://github.com/Nurutomo) | [Ariffb](https://github.com/ariffb25) | [Fadli](https://github.com/FadliDarmawan) | [Rifai](https://github.com/RFIunknown)
- Penulis / Pencipta | Penulis ulang | Pengembang ulang | Recde/Pengembang
+ Penulis / Pencipta | Penulis ulang | Pengembang ulang | Pengembang Ulang
 
 
