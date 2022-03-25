@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 
 let handler = async(m, { conn, args, usedPrefix }) => {
     if (args.length == 0) return conn.reply(m.chat, `Untuk menggunakan ${usedPrefix}anime\nSilahkan ketik: ${usedPrefix}anime [query]\nContoh: ${usedPrefix}anime random\n\nquery yang tersedia:\nrandom, waifu, husbu, neko, loli`, m)
-    if (args[0] == 'random' || args[0] == 'waifu' || args[0] == 'husbu' || args[0] == 'neko') {
+    if (args[0] == 'random' || args[0] == 'waifu' || args[0] == 'husbu' || args[0] == 'neko' || args[0] == 'loli') {
   await m.reply('Searching...')
 
         fetch('https://raw.githubusercontent.com/RFIunknown/AuraBot-server/main/random/anime/' + args[0] + '.txt')
