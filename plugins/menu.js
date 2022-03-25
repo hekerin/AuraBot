@@ -204,7 +204,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               }, {
                 "title": "Group Official AuraBot[🎊] ",
                 "description": "Gabung untuk mendapatkan informasi mengenai bot atau sekedar meramaikan",
-                "rowId": `${_p}harunoff`
+                "rowId": `${_p}auragc`
               }],
               "title": "Informasi Bot"
             }, {
