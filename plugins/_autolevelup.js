@@ -28,7 +28,7 @@ handler.before = async function (m) {
                         externalAdReply: {
                           mediaUrl: 'https://youtu.be/-tKVN2mAKRI',
                           title: 'Levelup!',
-                          body: 'Haruno Bot',
+                          body: 'AuraBot',
                           thumbnail: pp
                         }
                 }})
