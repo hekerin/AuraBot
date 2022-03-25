@@ -46,5 +46,5 @@ Harap patuhi rules dan peraturan pada masing masing group ya! Terimakasih.
 }
 handler.help = ['groupofficial']
 handler.tags = ['main']
-handler.command = /^harunoff|gr(u|ou)(p|b)official|gcofficial$/i
+handler.command = /^auragc|gr(u|ou)(p|b)official|gcofficial$/i
 module.exports = handler
