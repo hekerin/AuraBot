@@ -66,7 +66,7 @@ global.panduan = [
     {
         "index": "4",
         "search": "berlangganan",
-        "deskripsi": "Layanan berlangganan Haruno Bot adalah dengan menyewa bot dalam jumlah waktu ke dalam group. Untukm list harga/layanan silahkan baca pada *.sewa*",
+        "deskripsi": "Layanan berlangganan AuraBot adalah dengan menyewa bot dalam jumlah waktu ke dalam group. Untukm list harga/layanan silahkan baca pada *.sewa*",
         "judul": "Berlangganan"
     },
     {
