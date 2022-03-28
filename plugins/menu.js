@@ -29,7 +29,7 @@ Penggunaan tidak usah menggunakan <> atau []
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'anime', 'nulis', 'downloader', 'tools', 'fun', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'anime', 'nulis', 'downloader', 'tools', 'fun', 'nsfw', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Utama',
@@ -48,6 +48,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'downloader': 'Downloader',
     'tools': 'Tools',
     'fun': 'Fun',
+    'nsfw': 'NSFW 18+'
     'database': 'Database',
     'vote': 'Voting',
     'absen': 'Absen',
@@ -101,6 +102,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'fun') tags = {
     'fun': 'Fun'
+  }
+  if (teks == 'nsfw') tags = {
+    'nsfw': 'NSFW 18+'
   }
   if (teks == 'database') tags = {
     'database': 'Database'
