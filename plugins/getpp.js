@@ -1,6 +1,6 @@
 let handler = async (m, { conn, text }) => {
 
-  if (!text) return conn.reply(m.chat, 'Tag Orang yang mau di maling pp nya !!!', m)
+  if (!text) return conn.reply(m.chat, 'Tag Orang yang mau di maling pp nya :v', m)
 
   let pp = './src/avatar_contact.png'
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
