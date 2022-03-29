@@ -29,7 +29,7 @@ Penggunaan tidak usah menggunakan <> atau []
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'anime', 'nulis', 'downloader', 'tools', 'fun', 'nsfw', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'anime', 'nulis', 'downloader', 'tools', 'fun', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Utama',
@@ -48,7 +48,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'downloader': 'Downloader',
     'tools': 'Tools',
     'fun': 'Fun',
-    'nsfw': 'NSFW 18+'
     'database': 'Database',
     'vote': 'Voting',
     'absen': 'Absen',
@@ -102,9 +101,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'fun') tags = {
     'fun': 'Fun'
-  }
-  if (teks == 'nsfw') tags = {
-    'nsfw': 'NSFW 18+'
   }
   if (teks == 'database') tags = {
     'database': 'Database'
@@ -326,60 +322,53 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 16 」"
             }, {
               "rows": [{
-                "title": `NSFW 18+`,
-                "description": "Menu 18+",
-                "rowId": `${_p}? nsfw`
-              }],
-              "title": "─────「 17 」"
-            }, {
-              "rows": [{
                 "title": `Database`,
                 "description": "Menu untuk Database",
                 "rowId": `${_p}? database`
               }],
-              "title": "─────「 18 」"
+              "title": "─────「 17 」"
             }, {
               "rows": [{
                 "title": `Vote & Absen`,
                 "description": "Menu untuk Vote & Absen",
                 "rowId": `${_p}? vote`
               }],
-              "title": "─────「 19 」"
+              "title": "─────「 18 」"
             }, {
               "rows": [{
                 "title": `Islami`,
                 "description": "Menu Islami",
                 "rowId": `${_p}? islamic`
               }],
-              "title": "─────「 20 」"
+              "title": "─────「 19 」"
             }, {
               "rows": [{
                 "title": `Pengubah Suara`,
                 "description": "Menu Pengubah Suara",
                 "rowId": `${_p}? audio`
               }],
-              "title": "─────「 21 」"
+              "title": "─────「 20 」"
             }, {
               "rows": [{
                 "title":  `Jadi Bot`,
                 "description": "Numpang",
                 "rowId": `${_p}? jadibot`
               }],
-              "title": "─────「 22 」"
+              "title": "─────「 21 」"
             }, {
               "rows": [{
                 "title": `Info`,
                 "description": "Menu untuk Info",
                 "rowId": `${_p}? info`
               }],
-              "title": "─────「 23 」"
+              "title": "─────「 22 」"
             }, {
               "rows": [{
                 "title": `Tanpa Kategori`,
                 "description": "Menu Tanpa Kategori",
                 "rowId": `${_p}? tanpakategori`
               }],
-              "title": "─────「 24 」"
+              "title": "─────「 23 」"
             }, {
               "rows": [{
                 "title":  `Owner Menu`,
