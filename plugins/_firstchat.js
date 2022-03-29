@@ -21,7 +21,7 @@ Terimakasih
 
 *Bot bukan manusia, chat selain yang terdaftar di .menu tidak akan direspon!*
 Jika ada kendala silahkan hubungi owner.
-`.trim(), watermark, 'Menu', '.?', 'Rules', '.rules')
+`.trim(), watermark, 'Menu', '.menu', 'Rules', '.rules')
     user.pc = new Date * 1
 }
 
