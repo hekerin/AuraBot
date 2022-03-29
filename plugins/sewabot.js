@@ -23,7 +23,7 @@ let handler = async(m, { conn, usedPrefix, args, command }) => {
                   }, {
                     "title": "Group Official AuraBot",
                     "description": "Gabung untuk mendapatkan informasi mengenai bot atau sekedar meramaikan",
-                    "rowId": `${usedPrefix}harunoff`
+                    "rowId": `${usedPrefix}auragc`
                   }],
                   "title": "Informasi Bot"
                 }, {
