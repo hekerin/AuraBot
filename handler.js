@@ -149,7 +149,7 @@ module.exports = {
           backupDB: 0,
           statusUpdate: false,
           status: 0,
-          nhentai: true,
+          nsfw: true,
         }
       } catch (e) {
         console.error(e)
