@@ -20,7 +20,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       usedServer = server
       break
     } catch (e) {
-      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nMencoba server lain...'}`)
+      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nTrying another server...'}`)
     }
   }
   if (yt === false) throw 'No songs found. Try another keyword or as possible including song title and artist name!'
@@ -43,10 +43,11 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     await conn.sendFile(m.chat, dl_link, `${title}` + '.mp3', null, m)
   }
 }
-handler.help = ['play'].map(v => v + '<pencarian>')
+handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
-handler.command = /^(p|play)$/i
+handler.command = /^play?$/i
 
 handler.exp = 0
+handler.limit = true
 
 module.exports = handler
