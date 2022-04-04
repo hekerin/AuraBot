@@ -8,14 +8,20 @@ const defaultMenu = {
   before: `
 ┌─〔 %me 〕
 ├ Hai, *%name!*
-├ Uptime *%uptime*
-├ Database *%rtotalreg*
 └────
 %readmore`.trimStart(),
   header: '┌─〔 %category 〕',
-  body: '├◉ %cmd %islimit %isPremium',
+  body: '├ %cmd %islimit %isPremium',
   footer: '└────\n',
   after: `
+Panduan Singkat
+<> adalah parameter query
+Contoh: .join <link gc> maka .join https://chat.whatsapp.com/
+[] adalah tag seseorang atau parameter nomor
+Contoh: .kick [@62XXXX] maka .kick @62XXXX
+(limit) atau (premium) adalah keterangan apakah fitur tersebut memerlukan limit/hanya untuk user premium.
+Penggunaan command tidak usah menggunakan ()
+Penggunaan tidak usah menggunakan <> atau []
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
@@ -35,7 +41,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'premium': 'Premium',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
-    'anime': 'Anime', 
+    'anime': 'Anime',
     'nulis': 'MagerNulis & Logo',
     'downloader': 'Downloader',
     'tools': 'Tools',
@@ -80,7 +86,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'anonymous': 'Anonymous Chat'
   }
   if (teks == 'anime') tags = {
-     'anime': 'Anime'
+    'anime': 'Anime'
   }
   if (teks == 'nulis') tags = {
     'nulis': 'MagerNulis & Logo'
@@ -114,7 +120,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'info': 'Info'
   }
   if (teks == 'tanpakategori') tags = {
-    'Tanpa Kategori'
+    '': 'Tanpa Kategori'
   }
   if (teks == 'owner') tags = {
     'owner': 'Owner',
