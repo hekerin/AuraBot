@@ -16,16 +16,7 @@ const defaultMenu = {
   body: '├◉ %cmd %islimit %isPremium',
   footer: '└────\n',
   after: `
-Panduan Singkat
-<> adalah parameter query
-Contoh: .join <link gc> maka .join https://chat.whatsapp.com/
-[] adalah tag seseorang atau parameter nomor
-Contoh: .kick [@62XXXX] maka .kick @62XXXX
-(limit) atau (premium) adalah keterangan apakah fitur tersebut memerlukan limit/hanya untuk user premium.
-Penggunaan command tidak usah menggunakan ()
-Penggunaan tidak usah menggunakan <> atau []
 `,
-}
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
