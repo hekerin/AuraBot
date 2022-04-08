@@ -18,7 +18,7 @@ const defaultMenu = {
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'anime', 'nulis', 'downloader', 'tools', 'fun', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Utama',
@@ -32,6 +32,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'premium': 'Premium',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
+    'anime': 'Anime'
     'nulis': 'MagerNulis & Logo',
     'downloader': 'Downloader',
     'tools': 'Tools',
@@ -74,6 +75,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'anonymous') tags = {
     'anonymous': 'Anonymous Chat'
+  }
+  if (teks == 'anime') tags = {
+    'anime': 'Anime'
   }
   if (teks == 'nulis') tags = {
     'nulis': 'MagerNulis & Logo'
@@ -171,13 +175,13 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       let { isBussines } = conn.isOnWhatsApp(conn.user.jid)
       if (isBussines) {
-        await conn.sendButtonImg(m.chat, await(await fetch('https://telegra.ph/file/e1c3fc8ce22684b3887e4.jpg')).buffer(), `┌─〔 Menu 〕\n${arrayMenuFilter.map(v => '├ ' + _p + command + ' ' + v).join`\n`}└────`, watermark, 'Donasi', '.donasi', m)
+        await conn.sendButtonImg(m.chat, await(await fetch('https://telegra.ph/file/2fd33e5db7f9296439ae7.jpg')).buffer(), `┌─〔 Menu 〕\n${arrayMenuFilter.map(v => '├ ' + _p + command + ' ' + v).join`\n`}└────`, watermark, 'Donasi', '.donasi', m)
       } else {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
           "title": `${ucapan()}, ${name}`.trim(),
-          "description": "Berikut ini adalah daftar menu Haruno Bot.",
-          "footerText": "Silahkan tekan tombol \"Click Here\" untuk melihat sub-menu Haruno Bot.\n\nJika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada owner.",
+          "description": "Berikut ini adalah daftar menu AuraBot.",
+          "footerText": "Silahkan tekan tombol \"List Menu\" untuk melihat sub-menu AuraBot.\n\nJika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada owner.",
           "buttonText": "Click Here",
           "listType": "SINGLE_SELECT",
           "sections": [
@@ -271,6 +275,13 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                 "title": `Anonymous Chat`,
                 "description": "Menu untuk Anonymous Chat",
                 "rowId": `${_p}? anonymous`
+              }],
+                "title": "─────「 12 」"
+            }, {
+              "rows": [{
+                "title": `Anime`,
+                "description": "Menu Untuk Wibu",
+                "rowId": `${_p}? anime`
               }],
               "title": "─────「 11 」"
             }, {
@@ -464,3 +475,4 @@ function ucapan() {
     res = "Konbanwa"
   }
   return res
+}
