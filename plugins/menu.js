@@ -182,7 +182,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           "title": `${ucapan()}, ${name}`.trim(),
           "description": "Berikut ini adalah daftar menu AuraBot.",
           "footerText": "Silahkan tekan tombol \"List Menu\" untuk melihat sub-menu AuraBot.\n\nJika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada owner.",
-          "buttonText": "Click Here",
+          "buttonText": "List Menu",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
@@ -197,7 +197,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               }, {
                 "title": "Group Official Harunobot",
                 "description": "Gabung untuk mendapatkan informasi mengenai bot atau sekedar meramaikan",
-                "rowId": `${_p}harunoff`
+                "rowId": `${_p}auragc`
               }],
               "title": "Informasi Bot"
             }, {
@@ -427,7 +427,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonImg(m.chat, await (await fetch(thumbfoto)).buffer(), text.trim(), watermark, 'Pemilik Bot', `${_p}owner`, 'Donasi', `${_p}donasi`, 'Group Official', '.harunoff',  m)
+    await conn.send3ButtonImg(m.chat, await (await fetch(thumbfoto)).buffer(), text.trim(), watermark, 'Pemilik Bot', `${_p}owner`, 'Donasi', `${_p}donasi`, 'Group Official', '.auragc',  m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
