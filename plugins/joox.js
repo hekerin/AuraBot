@@ -1,25 +1,32 @@
-const { joox } = require('../lib/scrape_joox')
+const fetch = require('node-fetch')
 
-const isUrl = str => /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/gi.test(str)
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) throw `*Perintah ini untuk mencari lagu joox berdasarkan pencarian*\n\ncontoh:\n${usedPrefix + command} akad`
-    if (isUrl(text)) throw `*Perintah ini untuk mencari lagu joox berdasarkan pencarian bukan link*\n\ncontoh:\n${usedPrefix + command} akad`
-    let json = await joox(text)
-    let result = json.data[Math.floor(Math.random() * json.data.length)]
-    let pesan = `
-*Penyanyi:* ${result.penyanyi}
-*Judul:* ${result.lagu}
-*Album:* ${result.album}
-*Diterbitkan:* ${result.publish}
-*Link:* ${result.mp3}
-`.trim()
-    conn.sendFile(m.chat, result.img, 'error.jpg', pesan, m, false, { thumbnail: Buffer.alloc(0) })
-    conn.sendFile(m.chat, result.mp3, 'error.mp3', '', m, false, { mimetype: 'audio/mp4' })
-}
+    if (!text) throw `Pengunaan:\n${usedPrefix + command} <teks>\n\nContoh:\n${usedPrefix + command} akad`
+    if (isUrl(text)) throw `uhm.. judul kak bukan pake url\n\ncontoh:\n${usedPrefix + command} dandelions`
 
+ let res = await fetch(global.API("https://zenz.api.downloader/", "/joox"));
+    if (!res.ok) throw await `${res.status} ${res.statusText}`
+    let json = await res.json()
+    if (!json.status) throw json
+    let { judul, artist, album, img_url, mp3_url, filesize, duration } = json.result
+    let pesan = `
+Judul: ${judul}
+Artis: ${artist}
+Album: ${album}
+Ukuran File: ${filesize}
+Durasi: ${duration}
+© AuraBot
+    `.trim()
+
+    conn.sendFile(m.chat, img_url, 'eror.jpg', pesan, m, 0, { thumbnail: await (await fetch(img_url)).buffer() })
+    conn.sendFile(m.chat, mp3_url, 'error.mp3', '', m, 0, { asDocument: db.data.chats[m.chat].useDocument, mimetype: 'audio/mp4' })
+}
 handler.help = ['joox'].map(v => v + ' <judul>')
 handler.tags = ['downloader']
 handler.command = /^joox$/i
-handler.limit = true
-handler.premium = true // hapus aja kalau saya sengaja premium makan kuota termux :)
+
 module.exports = handler
+
+const isUrl = (text) => {
+    return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
+}
