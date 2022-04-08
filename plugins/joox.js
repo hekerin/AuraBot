@@ -4,7 +4,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `Pengunaan:\n${usedPrefix + command} <teks>\n\nContoh:\n${usedPrefix + command} akad`
     if (isUrl(text)) throw `uhm.. judul kak bukan pake url\n\ncontoh:\n${usedPrefix + command} akad`
 
-    let res = await fetch(API('https://zenzapi.xyz', '/downloader/joox', { search: text }, 'apikey'))
+    let res = await fetch(API('https://zenzapi.xyz', '/downloader/joox', { joox: text }))
     if (!res.ok) throw await `${res.status} ${res.statusText}`
     let json = await res.json()
     if (!json.status) throw json
