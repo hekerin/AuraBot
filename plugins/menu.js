@@ -13,7 +13,16 @@ const defaultMenu = {
   header: '┌─〔 %category 〕',
   body: '├ %cmd %islimit %isPremium',
   footer: '└────\n',
-  after: ``,
+  after: `
+Panduan Singkat
+<> adalah parameter query
+Contoh: .join <link gc> maka .join https://chat.whatsapp.com/
+[] adalah tag seseorang atau parameter nomor
+Contoh: .kick [@62XXXX] maka .kick @62XXXX
+(limit) atau (premium) adalah keterangan apakah fitur tersebut memerlukan limit/hanya untuk user premium.
+Penggunaan command tidak usah menggunakan ()
+Penggunaan tidak usah menggunakan <> atau []
+`,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
@@ -32,7 +41,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'premium': 'Premium',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
-    'anime': 'Anime'
+    'anime': 'Anime',
     'nulis': 'MagerNulis & Logo',
     'downloader': 'Downloader',
     'tools': 'Tools',
@@ -173,29 +182,25 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }
     })
     if (teks == '404') {
-      let { isBussines } = conn.isOnWhatsApp(conn.user.jid)
-      if (isBussines) {
-        await conn.sendButtonImg(m.chat, await(await fetch('https://telegra.ph/file/2fd33e5db7f9296439ae7.jpg')).buffer(), `┌─〔 Menu 〕\n${arrayMenuFilter.map(v => '├ ' + _p + command + ' ' + v).join`\n`}└────`, watermark, 'Donasi', '.donasi', m)
-      } else {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
           "title": `${ucapan()}, ${name}`.trim(),
-          "description": "Berikut ini adalah daftar menu AuraBot.",
-          "footerText": "Silahkan tekan tombol \"List Menu\" untuk melihat sub-menu AuraBot.\n\nJika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada owner.",
+          "description": "*Website Resmi Owner AuraBot* https://rfiunknown.github.io/dist/",
+          "footerText": "Jika Ada Bug/Eror Silahkan Laporkan Ke Owner",
           "buttonText": "List Menu",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
               "rows": [{
-                "title": `Pemilik Bot`,
+                "title": `Pemilik Bot[👨‍💻]`,
                 "description": "Nomor Pemilik Bot (owner)",
                 "rowId": `${_p}creator`
               }, {
-                "title": "Syarat Ketentuan dan Peraturan",
+                "title": "Syarat Ketentuan dan Peraturan[📜]",
                 "description": "Harap membaca Peraturan demi kenyamanan kita bersama",
                 "rowId": `${_p}rules`
               }, {
-                "title": "Group Official Harunobot",
+                "title": "Group Official AuraBot[🎊] ",
                 "description": "Gabung untuk mendapatkan informasi mengenai bot atau sekedar meramaikan",
                 "rowId": `${_p}auragc`
               }],
@@ -265,7 +270,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 9 」"
             }, {
               "rows": [{
-                "title": `Internet`,
+                "title":
+`Internet`,
                 "description": "Menu untuk menjelajahi Internet...",
                 "rowId": `${_p}? internet`
               }],
@@ -276,98 +282,98 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                 "description": "Menu untuk Anonymous Chat",
                 "rowId": `${_p}? anonymous`
               }],
-                "title": "─────「 12 」"
-            }, {
+              "title": "─────「 11 」"
+           }, {
               "rows": [{
-                "title": `Anime`,
+                "title": `Menu Anime`,
                 "description": "Menu Untuk Wibu",
                 "rowId": `${_p}? anime`
               }],
-              "title": "─────「 11 」"
+              "title": "_______ 「 12 」"
             }, {
               "rows": [{
                 "title": `Nulis & Logo`,
                 "description": "Menu untuk Nulis & Logo",
                 "rowId": `${_p}? nulis`
               }],
-              "title": "─────「 12 」"
+              "title": "─────「 13 」"
             }, {
               "rows": [{
                 "title": `Downloader`,
                 "description": "Menu Downloader",
                 "rowId": `${_p}? downloader`
               }],
-              "title": "─────「 13 」"
+              "title": "─────「 14 」"
             }, {
               "rows":[{
                 "title": `Tools`,
                 "description": "Menu untuk Tools",
                 "rowId": `${_p}? tools`
               }],
-              "title": "─────「 14 」"
+              "title": "─────「 15 」"
             }, {
               "rows": [{
-                "title": `Fun`,
-                "description": "Menu Fun",
+                "title": `Fun menu`,
+                "description": "Menu Hiburan",
                 "rowId": `${_p}? fun`
               }],
-              "title": "─────「 15 」"
+              "title": "─────「 16 」"
             }, {
               "rows": [{
                 "title": `Database`,
                 "description": "Menu untuk Database",
                 "rowId": `${_p}? database`
               }],
-              "title": "─────「 16 」"
+              "title": "─────「 17 」"
             }, {
               "rows": [{
                 "title": `Vote & Absen`,
                 "description": "Menu untuk Vote & Absen",
                 "rowId": `${_p}? vote`
               }],
-              "title": "─────「 17 」"
+              "title": "─────「 18 」"
             }, {
               "rows": [{
-                "title": `Islamic`,
-                "description": "Menu Islamic",
+                "title": `Islami`,
+                "description": "Menu Islami",
                 "rowId": `${_p}? islamic`
               }],
-              "title": "─────「 18 」"
+              "title": "─────「 19 」"
             }, {
               "rows": [{
                 "title": `Pengubah Suara`,
                 "description": "Menu Pengubah Suara",
                 "rowId": `${_p}? audio`
               }],
-              "title": "─────「 19 」"
+              "title": "─────「 20 」"
             }, {
               "rows": [{
                 "title":  `Jadi Bot`,
                 "description": "Numpang",
                 "rowId": `${_p}? jadibot`
               }],
-              "title": "─────「 20 」"
+              "title": "─────「 21 」"
             }, {
               "rows": [{
                 "title": `Info`,
                 "description": "Menu untuk Info",
                 "rowId": `${_p}? info`
               }],
-              "title": "─────「 21 」"
+              "title": "─────「 22 」"
             }, {
               "rows": [{
                 "title": `Tanpa Kategori`,
                 "description": "Menu Tanpa Kategori",
                 "rowId": `${_p}? tanpakategori`
               }],
-              "title": "─────「 22 」"
+              "title": "─────「 23 」"
             }, {
               "rows": [{
                 "title":  `Owner Menu`,
                 "description": "Menu Khusus Owner",
                 "rowId": `${_p}? owner`
               }],
-              "title": "─────「 23 」"
+              "title": "─────「 24 」"
             }
           ], "contextInfo": {
             "stanzaId": m.key.id,
@@ -377,7 +383,34 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         }
       }, {}), { waitForAck: true })
     }
-    }
+    // gunakan ini jika kamu menggunakan whatsapp bisnis
+    //   throw `
+    // ┌〔 DAFTAR MENU 〕
+    // ├ ${_p + command} all
+    // ├ ${_p + command} game
+    // ├ ${_p + command} xp
+    // ├ ${_p + command} stiker
+    // ├ ${_p + command} kerang
+    // ├ ${_p + command} quotes
+    // ├ ${_p + command} admin
+    // ├ ${_p + command} group
+    // ├ ${_p + command} premium
+    // ├ ${_p + command} internet
+    // ├ ${_p + command} anonymous
+    // ├ ${_p + command} nulis
+    // ├ ${_p + command} downloader
+    // ├ ${_p + command} tools
+    // ├ ${_p + command} fun
+    // ├ ${_p + command} database
+    // ├ ${_p + command} vote
+    // ├ ${_p + command} quran
+    // ├ ${_p + command} audio
+    // ├ ${_p + command} jadibot
+    // ├ ${_p + command} info
+    // ├ ${_p + command} tanpa kategori
+    // ├ ${_p + command} owner
+    // └────  
+    //     `.trim()
     let groups = {}
     for (let tag in tags) {
       groups[tag] = []
@@ -427,7 +460,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonImg(m.chat, await (await fetch(thumbfoto)).buffer(), text.trim(), watermark, 'Pemilik Bot', `${_p}owner`, 'Donasi', `${_p}donasi`, 'Group Official', '.auragc',  m)
+    await conn.send3ButtonLoc(m.chat, await (await fetch(thumbfoto)).buffer(), text.trim(), watermark, 'Pemilik Bot', `${_p}owner`, 'Donasi', `${_p}donasi`, 'Group Official', '.harunoff',  m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -463,16 +496,16 @@ function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
   res = "Selamat dinihari"
   if (time >= 4) {
-    res = "Ohayou!"
+    res = "Selamat pagi"
   }
   if (time > 10) {
-    res = "Konnichiwa"
+    res = "Selamat siang"
   }
   if (time >= 15) {
-    res = "Konnichiwa"
+    res = "Selamat sore"
   }
   if (time >= 18) {
-    res = "Konbanwa"
+    res = "Selamat malam"
   }
   return res
 }
