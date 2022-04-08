@@ -13,21 +13,12 @@ const defaultMenu = {
   header: '┌─〔 %category 〕',
   body: '├ %cmd %islimit %isPremium',
   footer: '└────\n',
-  after: `
-Panduan Singkat
-<> adalah parameter query
-Contoh: .join <link gc> maka .join https://chat.whatsapp.com/
-[] adalah tag seseorang atau parameter nomor
-Contoh: .kick [@62XXXX] maka .kick @62XXXX
-(limit) atau (premium) adalah keterangan apakah fitur tersebut memerlukan limit/hanya untuk user premium.
-Penggunaan command tidak usah menggunakan ()
-Penggunaan tidak usah menggunakan <> atau []
-`,
+  after: ``,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'anime', 'nulis', 'downloader', 'tools', 'fun', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'anime', 'nsfw', 'nulis', 'downloader', 'tools', 'fun', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Utama',
@@ -42,6 +33,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
     'anime': 'Anime',
+    'nsfw': 'Nsfw'
     'nulis': 'MagerNulis & Logo',
     'downloader': 'Downloader',
     'tools': 'Tools',
@@ -88,7 +80,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'anime') tags = {
     'anime': 'Anime'
   }
-  if (teks == 'nulis') tags = {
+  if (teks == 'nsfw') tags = {
+    'nsfw': 'Nsfw'
+  }    
+    if (teks == 'nulis') tags = {
     'nulis': 'MagerNulis & Logo'
   }
   if (teks == 'downloader') tags = {
@@ -181,7 +176,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         enabled: !plugin.disabled,
       }
     })
-    if (teks == '404') {
+ if (teks == '404') {
+      let { isBussines } = conn.isOnWhatsApp(conn.user.jid)
+      if (isBussines) {
+        await conn.sendButtonImg(m.chat, await(await fetch('https://telegra.ph/file/2fd33e5db7f9296439ae7.jpg')).buffer(), `┌─〔 Menu 〕\n${arrayMenuFilter.map(v => '├ ' + _p + command + ' ' + v).join`\n`}└────`, watermark, 'Donasi', '.donasi', m)
+      } else {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
           "title": `${ucapan()}, ${name}`.trim(),
@@ -289,91 +288,98 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                 "description": "Menu Untuk Wibu",
                 "rowId": `${_p}? anime`
               }],
-              "title": "_______ 「 12 」"
+              "title": "─────「 12 」"
+           }, {
+              "rows": [{
+                "title": `Menu Nsfw`,
+                "description": "Menu Untuk 18+",
+                "rowId": `${_p}? nsfw`
+              }],
+              "title": "_______ 「 13 」"
             }, {
               "rows": [{
                 "title": `Nulis & Logo`,
                 "description": "Menu untuk Nulis & Logo",
                 "rowId": `${_p}? nulis`
               }],
-              "title": "─────「 13 」"
+              "title": "─────「 14 」"
             }, {
               "rows": [{
                 "title": `Downloader`,
                 "description": "Menu Downloader",
                 "rowId": `${_p}? downloader`
               }],
-              "title": "─────「 14 」"
+              "title": "─────「 15 」"
             }, {
               "rows":[{
                 "title": `Tools`,
                 "description": "Menu untuk Tools",
                 "rowId": `${_p}? tools`
               }],
-              "title": "─────「 15 」"
+              "title": "─────「 16 」"
             }, {
               "rows": [{
                 "title": `Fun menu`,
                 "description": "Menu Hiburan",
                 "rowId": `${_p}? fun`
               }],
-              "title": "─────「 16 」"
+              "title": "─────「 17 」"
             }, {
               "rows": [{
                 "title": `Database`,
                 "description": "Menu untuk Database",
                 "rowId": `${_p}? database`
               }],
-              "title": "─────「 17 」"
+              "title": "─────「 18 」"
             }, {
               "rows": [{
                 "title": `Vote & Absen`,
                 "description": "Menu untuk Vote & Absen",
                 "rowId": `${_p}? vote`
               }],
-              "title": "─────「 18 」"
+              "title": "─────「 19 」"
             }, {
               "rows": [{
                 "title": `Islami`,
                 "description": "Menu Islami",
                 "rowId": `${_p}? islamic`
               }],
-              "title": "─────「 19 」"
+              "title": "─────「 20 」"
             }, {
               "rows": [{
                 "title": `Pengubah Suara`,
                 "description": "Menu Pengubah Suara",
                 "rowId": `${_p}? audio`
               }],
-              "title": "─────「 20 」"
+              "title": "─────「 21 」"
             }, {
               "rows": [{
                 "title":  `Jadi Bot`,
                 "description": "Numpang",
                 "rowId": `${_p}? jadibot`
               }],
-              "title": "─────「 21 」"
+              "title": "─────「 22 」"
             }, {
               "rows": [{
                 "title": `Info`,
                 "description": "Menu untuk Info",
                 "rowId": `${_p}? info`
               }],
-              "title": "─────「 22 」"
+              "title": "─────「 23 」"
             }, {
               "rows": [{
                 "title": `Tanpa Kategori`,
                 "description": "Menu Tanpa Kategori",
                 "rowId": `${_p}? tanpakategori`
               }],
-              "title": "─────「 23 」"
+              "title": "─────「 24 」"
             }, {
               "rows": [{
                 "title":  `Owner Menu`,
                 "description": "Menu Khusus Owner",
                 "rowId": `${_p}? owner`
               }],
-              "title": "─────「 24 」"
+              "title": "─────「 25 」"
             }
           ], "contextInfo": {
             "stanzaId": m.key.id,
