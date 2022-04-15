@@ -11,7 +11,7 @@ handler.all = async function (m) {
     let user = global.db.data.users[m.sender]
     let name = conn.getName(m.sender)
     if (new Date - user.pc < 86400000) return // setiap 24 jam sekali
-    await conn.send2ButtonLoc(m.chat, await(await fetch(thumbfoto)).buffer(), `
+    await conn.send2ButtonImg(m.chat, await(await fetch('http://telegra.ph/file/29f2d451412ae151a2dfb.jpg')).buffer(), `
 *Hi ${name}, ${ucapan()}*
 Saya adalah AuraBot salah satu bot WhatsApp.
 
