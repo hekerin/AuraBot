@@ -1,27 +1,38 @@
-let fetch = require('node-fetch')
-const uploadFile = require('../lib/uploadFile')
-let handler = async (m) => {
+// https://github.com/Nobuyaki
+// Jangan Hapus link githubnya bang :)
+
+const fetch = require('node-fetch')
+let handler = async (m, { conn, usedPrefix }) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw 'Reply audio dengan caption #judul'
-  let media = await q.download()
-  let url = await uploadFile(media)
-  let res = await fetch(global.API('zeks', '/api/searchmusic', { audio: url }, 'apikey'))
-  if (!res.ok) throw await res.text()
-  let json = await res.json()
-  let caption = `
-Lagu Ditemukan!
-Judul: ${json.data.title}
-Artists: ${json.data.artist}
-Genre: ${json.data.genre}
-Album: ${json.data.album}
-Realese Date: ${json.data.relese_date}
-Note: Hasil dari api.zeks.xyz. Hasil bisa tidak akurat.
-©Haruno
+  if (!mime) throw `Reply Foto/Kirim Foto Karakter Anime Dengan Caption ${usedPrefix}judul`
+  if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak support`
+  let img = await q.download()
+  await m.reply('Searching Anime Titles...')
+  let anime = `data:${mime};base64,${img.toString('base64')}`
+  let response = await fetch('https://trace.moe/api/search', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ image: anime }),
+  })
+  if (!response.ok) throw 'Gambar tidak ditemukan!'
+  let result = await response.json()
+  let { is_adult, title, title_chinese, title_romaji, episode, season, similarity, filename, at, tokenthumb, anilist_id } = result.docs[0]
+  let link = `https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(filename)}?t=${at}&token=${tokenthumb}`
+  let nobuyaki = `
+${similarity < 0.89 ? 'Saya Memiliki Keyakinan Rendah Tentang Hal Ini' : ''}
+❏ Judul Jepang : *${title}*
+❏ Ejaan Judul : *${title_romaji}*
+❏ Similarity : *${(similarity * 100).toFixed(1)}%*
+❏ Episode : *${episode.toString()}*
+❏ Ecchi : *${is_adult ? 'Yes' : 'No'}*
 `.trim()
-    conn.reply(m.chat, caption, m)
+  conn.sendFile(m.chat, link, 'srcanime.mp4', `${nobuyaki}`, m)
 }
+handler.help = ['judul (caption|reply image)']
 handler.tags = ['internet']
-handler.help = ['judul <reply audio>']
-handler.command = /^judul$/i
+handler.command = /^(judul)$/i
+
 module.exports = handler

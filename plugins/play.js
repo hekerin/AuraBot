@@ -31,7 +31,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   await conn.reply(m.chat, `- Requested by @${m.sender.split`@`[0]}`, m, { thumbnail: th, contextInfo: { 
     mentionedJid: [m.sender],
     externalAdReply: {
-       mediaUrl: 'https://youtu.be/-tKVN2mAKRI',
+       sourceUrl: 'https://youtu.be/-tKVN2mAKRI',
        title: 'Now playing',
        body: title,
        thumbnail: thb
@@ -45,9 +45,8 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
-handler.command = /^play$/i
+handler.command = /^(p|play)$/i
 
 handler.exp = 0
-handler.limit = true
 
 module.exports = handler

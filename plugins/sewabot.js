@@ -70,13 +70,13 @@ let handler = async(m, { conn, usedPrefix, args, command }) => {
             }
           }, {}), { waitForAck: true })
     } else if (args[0] == 1) {
-        await conn.sendButtonLoc(m.chat, await(await fetch(thumbfoto)).buffer(), `Memasukkan bot ke group selama 1 bulan *Rp15.000*\n\nPembayaran dapat melalui:\nGoPay: 6281393227036 \nDana: 6281393227036\nOVO: - \nPulsa(Telkomsel): 6281393227036\n\nSilahkan hubungi owner untuk mengkonfirmasi atau bertanya.`, watermark, 'Owner', '.owner', m)
+        await conn.reply(m.chat, `Memasukkan bot ke group selama 1 bulan *Rp15.000*\n\nPembayaran dapat melalui:\nGoPay: 6281393227036\nDana: 6281393227036\nOVO:-\nPulsa(Telkom): 6281393227036\n\nSilahkan hubungi owner untuk mengkonfirmasi atau bertanya.`, m)
     } else if (args[0] == 2) {
-        await conn.sendButtonLoc(m.chat, await(await fetch(thumbfoto)).buffer(), `Memasukkan bot ke group selama 2 bulan *Rp20.000*\n\nPembayaran dapat melalui:\nGoPay: 6281393227036 \nDana: 6281393227036\nOVO:- \nPulsa(Telkomsel): 6281393227036\n\nSilahkan hubungi owner untuk mengkonfirmasi atau bertanya.`, watermark, 'Owner', '.owner', m)
+        await conn.reply(m.chat, `Memasukkan bot ke group selama 2 bulan *Rp20.000*\n\nPembayaran dapat melalui:\nGoPay: 6281393227036\nDana: 6281393227036\nOVO:-\nPulsa(Telkom): 6281393227036\n\nSilahkan hubungi owner untuk mengkonfirmasi atau bertanya.`, m)
     } else if (args[0] === 'prem') {
-        await conn.sendButtonLoc(m.chat, await(await fetch(thumbfoto)).buffer(), `Menjadi user premium selama 3 bulan *Rp25.000*\n\nPembayaran dapat melalui:\nGoPay: 6281393227036 \nDana: 6281393227036\nOVO:- \nPulsa(Telkomsel): 6281393227036\n\nSilahkan hubungi owner untuk mengkonfirmasi atau bertanya.`, watermark, 'Owner', '.owner', m)
+        await conn.reply(m.chat, `Menjadi user premium selama 3 bulan *Rp25.000*\n\nPembayaran dapat melalui:\nGoPay: 6281393227036\nDana: 6281393227036\nOVO:-\nPulsa(Telkom): 6281393227036\n\nSilahkan hubungi owner untuk mengkonfirmasi atau bertanya.`, m)
     } else if (args[0] === 'perm') {
-        await conn.sendButtonLoc(m.chat, await(await fetch(thumbfoto)).buffer(), `Memasukkan bot TANPA BATASAN WAKTU! *Rp30.000*\n\nPembayaran dapat melalui:\nGoPay: 6281393227036 \nDana: 6281393227036\nOVO:- \nPulsa(Telkomsel): 6281943265086\n\nSilahkan hubungi owner untuk mengkonfirmasi atau bertanya.`, watermark, 'Owner', '.owner', m)
+        await conn.reply(m.chat, `Memasukkan bot TANPA BATASAN WAKTU! *Rp30.000*\n\nPembayaran dapat melalui:\nGoPay: 6281393227036\nDana: 6281393227036\nOVO:-\nPulsa(Telkom): 6281393227036\n\nSilahkan hubungi owner untuk mengkonfirmasi atau bertanya.`, m)
     }
 }
 handler.help = ['sewa']

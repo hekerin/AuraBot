@@ -8,26 +8,19 @@ const defaultMenu = {
   before: `
 ┌─〔 %me 〕
 ├ Hai, *%name!*
+├ Uptime *%uptime*
+├ Database *%totalreg*
 └────
 %readmore`.trimStart(),
   header: '┌─〔 %category 〕',
-  body: '├ %cmd %islimit %isPremium',
+  body: '├◉ %cmd %islimit %isPremium',
   footer: '└────\n',
-  after: `
-Panduan Singkat
-<> adalah parameter query
-Contoh: .join <link gc> maka .join https://chat.whatsapp.com/
-[] adalah tag seseorang atau parameter nomor
-Contoh: .kick [@62XXXX] maka .kick @62XXXX
-(limit) atau (premium) adalah keterangan apakah fitur tersebut memerlukan limit/hanya untuk user premium.
-Penggunaan command tidak usah menggunakan ()
-Penggunaan tidak usah menggunakan <> atau []
-`,
+  after: ``,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'anime', 'nulis', 'downloader', 'tools', 'fun', 'database', 'islamic', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'anime', 'nulis', 'downloader', 'tools', 'fun', 'database', 'islamic', 'audio', 'nsfw', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Utama',
@@ -51,7 +44,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'absen': 'Absen',
     'quran': 'Al Qur\'an',
     'audio': 'Pengubah Suara',
-    'jadibot': 'Jadi Bot',
+    'nsfw': 'Nsfw',
     'info': 'Info',
     '': 'Tanpa Kategori',
   }
@@ -113,8 +106,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'audio') tags = {
     'audio': 'Pengubah Suara'
   }
-  if (teks == 'jadibot') tags = {
-    'jadibot': 'Jadi Bot'
+  if (teks == 'nsfw') tags = {
+    'nsfw': 'Nsfw'
   }
   if (teks == 'info') tags = {
     'info': 'Info'
@@ -182,12 +175,16 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }
     })
     if (teks == '404') {
+      let { isBussines } = conn.isOnWhatsApp(conn.user.jid)
+      if (isBussines) {
+        await conn.sendButtonImg(m.chat, await(await fetch('https://telegra.ph/file/e1c3fc8ce22684b3887e4.jpg')).buffer(), `┌─〔 Menu 〕\n${arrayMenuFilter.map(v => '├ ' + _p + command + ' ' + v).join`\n`}└────`, watermark, 'Donasi', '.donasi', m)
+      } else {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
           "title": `${ucapan()}, ${name}`.trim(),
-          "description": "*Website Resmi Owner AuraBot* https://rfiunknown.github.io/dist/",
-          "footerText": "Jika Ada Bug/Eror Silahkan Laporkan Ke Owner",
-          "buttonText": "List Menu",
+          "description": "Berikut ini adalah daftar menu AuraBot.",
+          "footerText": "Silahkan tekan tombol \"Click Here\" untuk melihat sub-menu AuraBot.\n\nJika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada owner.",
+          "buttonText": "Click Here",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
@@ -348,8 +345,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "title": "─────「 20 」"
             }, {
               "rows": [{
-                "title":  `Jadi Bot`,
-                "description": "Numpang",
+                "title":  `Nsfw`,
+                "description": "Menu 18+",
                 "rowId": `${_p}? jadibot`
               }],
               "title": "─────「 21 」"
@@ -383,34 +380,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         }
       }, {}), { waitForAck: true })
     }
-    // gunakan ini jika kamu menggunakan whatsapp bisnis
-    //   throw `
-    // ┌〔 DAFTAR MENU 〕
-    // ├ ${_p + command} all
-    // ├ ${_p + command} game
-    // ├ ${_p + command} xp
-    // ├ ${_p + command} stiker
-    // ├ ${_p + command} kerang
-    // ├ ${_p + command} quotes
-    // ├ ${_p + command} admin
-    // ├ ${_p + command} group
-    // ├ ${_p + command} premium
-    // ├ ${_p + command} internet
-    // ├ ${_p + command} anonymous
-    // ├ ${_p + command} nulis
-    // ├ ${_p + command} downloader
-    // ├ ${_p + command} tools
-    // ├ ${_p + command} fun
-    // ├ ${_p + command} database
-    // ├ ${_p + command} vote
-    // ├ ${_p + command} quran
-    // ├ ${_p + command} audio
-    // ├ ${_p + command} jadibot
-    // ├ ${_p + command} info
-    // ├ ${_p + command} tanpa kategori
-    // ├ ${_p + command} owner
-    // └────  
-    //     `.trim()
+    }
     let groups = {}
     for (let tag in tags) {
       groups[tag] = []
@@ -460,7 +430,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(thumbfoto)).buffer(), text.trim(), watermark, 'Pemilik Bot', `${_p}owner`, 'Donasi', `${_p}donasi`, 'Group Official', '.harunoff',  m)
+    await conn.send3ButtonImg(m.chat, await (await fetch(thumbfoto)).buffer(), text.trim(), watermark, 'Pemilik Bot', `${_p}owner`, 'Donasi', `${_p}donasi`, 'Group Official', '.auragc',  m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e

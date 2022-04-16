@@ -1,36 +1,32 @@
-let limit = 30
-const { servers, yta } = require('../lib/y2mate')
-let handler = async (m, { conn, args, isPrems, isOwner }) => {
-  if (!args || !args[0]) return m.reply('Uhm... urlnya mana?')
-  let chat = global.DATABASE._data.chats[m.chat]
-  let server = (args[1] || servers[0]).toLowerCase()
-  let { dl_link, thumb, title, filesize, filesizeF} = await yta(args[0], servers.includes(server) ? server : servers[0])
-  let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-  conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
-*${isLimit ? 'Pakai ': ''}Link:* ${dl_link}
-`.trim(), m)
-  if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
-`.trim(), m, null, {
-  asDocument: chat.useDocument
-})
+const fetch = require('node-fetch')
+
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+    if (!text) throw `Pengunaan:\n${usedPrefix + command} <teks>\n\nContoh:\n${usedPrefix + command} akad`
+    if (isUrl(text)) throw `uhm.. judul kak bukan pake url\n\ncontoh:\n${usedPrefix + command} akad`
+
+    let res = await fetch(API('pencarikode', '/download/joox', { search: text }, 'apikey'))
+    if (!res.ok) throw await `${res.status} ${res.statusText}`
+    let json = await res.json()
+    if (!json.status) throw json
+    let { judul, artist, album, img_url, mp3_url, filesize, duration } = json.result
+    let pesan = `
+Judul: ${judul}
+Artis: ${artist}
+Album: ${album}
+Ukuran File: ${filesize}
+Durasi: ${duration}
+© stikerin
+    `.trim()
+
+    conn.sendFile(m.chat, img_url, 'eror.jpg', pesan, m, 0, { thumbnail: await (await fetch(img_url)).buffer() })
+    conn.sendFile(m.chat, mp3_url, 'error.mp3', '', m, 0, { asDocument: db.data.chats[m.chat].useDocument, mimetype: 'audio/mp4' })
 }
-handler.help = ['mp3','a'].map(v => 'yt' + v + ` <url> [server: ${servers.join(', ')}]`)
+handler.help = ['joox'].map(v => v + ' <judul>')
 handler.tags = ['downloader']
-handler.command = /^yt(a|mp3)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-handler.exp = 0
+handler.command = /^joox$/i
 
 module.exports = handler
+
+const isUrl = (text) => {
+    return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
+}

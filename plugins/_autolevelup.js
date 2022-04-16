@@ -1,3 +1,4 @@
+
 let levelling = require('../lib/levelling')
 let fetch = require('node-fetch')
 
@@ -8,8 +9,8 @@ handler.before = async function (m) {
         let users = Object.entries(db.data.users).map(([key, value]) => {
                 return { ...value, jid: key }
         })
-        let pp = await(await fetch('https://telegra.ph/file/39bbded9693c9338069fd.jpg')).buffer()
-        let kai = await(await fetch('https://telegra.ph/file/4d2bca79fa5a4f2dd3d81.jpg')).buffer()
+        let pp = await(await fetch('https://telegra.ph/file/2fd33e5db7f9296439ae7.jpg')).buffer()
+        let kai = await(await fetch('https://telegra.ph/file/39bbded9693c9338069fd.jpg')).buffer()
         let who = m.sender
         let sortedLevel = users.map(toNumber('level')).sort(sort('level'))
         let usersLevel = sortedLevel.map(enumGetKey)
@@ -26,7 +27,7 @@ handler.before = async function (m) {
                 this.reply(m.chat, text, m, { thumbnail: kai, contextInfo: {
                         mentionedJid: [who],
                         externalAdReply: {
-                          mediaUrl: 'https://youtu.be/-tKVN2mAKRI',
+                          sourceUrl: 'https://rfiunknown.github.io/dist',
                           title: 'Levelup!',
                           body: 'AuraBot',
                           thumbnail: pp

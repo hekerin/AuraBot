@@ -8,7 +8,6 @@ let handler = async (m, { conn, isOwner }) => {
 ├ ${isOwner ? '@' + jid.split`@`[0] : jid}
 `.trim()).join('\n') : ''}
 └────
-
 ┌〔 Daftar Pengguna Terbanned 〕
 ├ Total : ${users.length} Pengguna${users ? '\n' + users.map(([jid], i) => `
 ├ ${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
@@ -21,5 +20,6 @@ let handler = async (m, { conn, isOwner }) => {
 handler.help = ['bannedlist']
 handler.tags = ['info']
 handler.command = /^listban(ned)?|ban(ned)?list|daftarban(ned)?$/i
+handler.owner = true
 
 module.exports = handler
