@@ -39,6 +39,7 @@ global.eksternal = 'https://telegra.ph/file/c7073a9a5a95faafcc913.jpg'
 global.watermark = '© AuraBot'
 global.thumbfoto = 'http://telegra.ph/file/29f2d451412ae151a2dfb.jpg' 
 global.image = 'https://telegra.ph/file/39bbded9693c9338069fd.jpg'
+global.pp = 'https://telegra.ph/file/39bbded9693c9338069fd.jpg'
 
 global.multiplier = 175 // Semakin tinggi, semakin sulit naik level
 
