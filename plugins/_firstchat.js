@@ -1,31 +1,16 @@
-let moment = require('moment-timezone')
-let fetch = require ('node-fetch')
+import moment from 'moment-timezone'
+import fetch from 'node-fetch'
 let handler = m => m
 
-handler.all = async function (m) {
+export async function all(m) {
 
+    let user = global.db.data.users[m.sender]
     if (m.chat.endsWith('broadcast')) return
     if (m.fromMe) return
     if (m.isGroup) return
+    if (!user.firstchat) return
     if (db.data.settings.groupOnly) return
-    let user = global.db.data.users[m.sender]
     let name = conn.getName(m.sender)
-    if (new Date - user.pc < 86400000) return // setiap 24 jam sekali 
-    await conn.send2ButtonImg(m.chat, await(await fetch('http://telegra.ph/file/29f2d451412ae151a2dfb.jpg')).buffer(), `
-*Hi ${name}, ${ucapan()}*
-Saya adalah AuraBot salah satu bot WhatsApp.
-
-*Harap untuk tidak menelpon, meminta save, atau spam dalam penggunaan bot*
-Silahkan baca rules dan mematuhi rules demi kenyamanan kita bersama.
-Terimakasih
-
-*Bot bukan manusia, chat selain yang terdaftar di .menu tidak akan direspon!*
-Jika ada kendala silahkan hubungi owner.
-`.trim(), watermark, 'Menu', '.menu', 'Rules', '.rules')
-    user.pc = new Date * 1
-}
-
-module.exports = handler
 function ucapan() {
     const time = moment.tz('Asia/Jakarta').format('HH')
     res = "Selamat dinihari"
@@ -42,4 +27,42 @@ function ucapan() {
         res = "Selamat malam"
     }
     return res
+}
+    let teks = `
+*Hi ${name}, ${ucapan()}*
+Saya adalah AuraBot salah satu bot WhatsApp.
+
+*Harap untuk tidak menelpon, meminta save, atau spam dalam penggunaan bot*
+Silahkan baca rules dan mematuhi rules demi kenyamanan kita bersama.
+Terimakasih
+
+*Bot bukan manusia, chat selain yang terdaftar di .menu tidak akan direspon!*
+Jika ada kendala silahkan hubungi owner.
+`.trim()
+    const message = {
+        image: { url: 'http://telegra.ph/file/29f2d451412ae151a2dfb.jpg'},
+        jpegThumbnail: await(await fetch('http://telegra.ph/file/29f2d451412ae151a2dfb.jpg')).buffer(),
+        caption: teks,
+        footer: watermark,
+        templateButtons: [
+            {
+                urlButton: {
+                    displayText: 'Grup AuraBot',
+                    url: 'https://chat.whatsapp.com/BKUUviabCwFIr9pIRe9iuE'
+                }
+            }, {
+                quickReplyButton: {
+                    displayText: 'Owner',
+                    id: '.owner'
+                }
+            }, {
+                quickReplyButton: {
+                    displayText: 'Menu',
+                    id: '.menu'
+                }
+            }
+        ]
+    }
+    await this.sendMessage(m.chat, message, { quoted: m })
+    user.firstchat = false
 }
