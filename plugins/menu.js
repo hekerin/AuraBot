@@ -347,7 +347,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
               "rows": [{
                 "title":  `Nsfw`,
                 "description": "Menu 18+",
-                "rowId": `${_p}? jadibot`
+                "rowId": `${_p}? nsfw`
               }],
               "title": "─────「 21 」"
             }, {
