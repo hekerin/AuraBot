@@ -1,4 +1,4 @@
-console.log('Memulai...')
+console.log('Memulai AuraBot...')
 let { spawn } = require('child_process')
 let path = require('path')
 let fs = require('fs')

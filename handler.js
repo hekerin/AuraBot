@@ -44,6 +44,7 @@ module.exports = {
           if (!('banned' in user)) user.banned = false
           if (!('level' in user)) user.level = 0
           if (!('premium' in user)) user.premium = false
+          if (!('firstchat' in user)) user.firstchat = true
           if (!isNumber(user.premiumTime)) user.premiumTime = 0
           if (!('role' in user)) user.role = ''
           if (!isNumber(user.joincount)) user.joincount = 0
@@ -67,6 +68,7 @@ module.exports = {
           level: 0,
           premium: false,
           premiumTime: 0,
+          firstchat: false,
           role: '',
           joincount: 0,
           call: 0,
@@ -134,7 +136,7 @@ module.exports = {
           if (!'self' in settings) settings.self = false
           if (!'backup' in settings) settings.backup = true
           if (!isNumber(settings.backupDB)) settings.backupDB = 0
-          if (!'nsfw' in settings) settings.nsfw = true
+          if (!'nhentai' in settings) settings.nhentai = true
         } else global.db.data.settings[this.user.jid] = {
           anon: true,
           anticall: true,
@@ -149,7 +151,7 @@ module.exports = {
           backupDB: 0,
           statusUpdate: false,
           status: 0,
-          nsfw: true,
+          nhentai: true,
         }
       } catch (e) {
         console.error(e)
@@ -402,7 +404,7 @@ module.exports = {
             let groupMetadata = await this.groupMetadata(jid)
             for (let user of participants) {
               let pp = await(await fetch('https://telegra.ph/file/39bbded9693c9338069fd.jpg')).buffer()
-              let kai = await(await fetch('https://telegra.ph/file/4d2bca79fa5a4f2dd3d81.jpg')).buffer()
+              let kai = await(await fetch('https://telegra.ph/file/39bbded9693c9338069fd.jpg')).buffer()
               try {
                 pp = await ( await fetch(await this.getProfilePicture(user))).buffer()
               } catch (e) {
@@ -414,7 +416,7 @@ module.exports = {
                 this.reply(jid, text, 0, { thumbnail: kai, contextInfo: {
                 mentionedJid: [user],
                 externalAdReply: {
-                  mediaUrl: 'https://youtu.be/-tKVN2mAKRI',
+                  sourceUrl: 'https://rfiunknown.github.io/dist/',
                   title: action === 'add' ? wel : lea,
                   body: 'AuraBot',
                   thumbnail: pp
